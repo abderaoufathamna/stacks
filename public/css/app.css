@@ -1,0 +1,664 @@
+/* ==========================================================
+   Stacks — App Stylesheet
+   Shared design system for all internal pages (dashboard,
+   books, authors, categories, borrowings, auth forms).
+   Mirrors the palette and type system used on the landing page.
+   ========================================================== */
+
+:root{
+  --espresso:#241509;
+  --coffee:#4a3323;
+  --walnut:#6f4e37;
+  --tan:#a8815c;
+  --camel:#cfa96e;
+  --parchment:#f3e9d7;
+  --parchment-dim:#e8dcc4;
+  --ink:#1c1108;
+  --line: rgba(28,17,8,0.12);
+  --line-dark: rgba(243,233,215,0.14);
+
+  --sage:#6b7a4f;
+  --sage-dim:#e4e9da;
+  --rust:#8c3a2b;
+  --rust-dim:#f1ddd8;
+}
+
+*{ box-sizing:border-box; }
+
+body{
+  background:var(--parchment);
+  color:var(--ink);
+  font-family:'Inter', sans-serif;
+  line-height:1.5;
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+h1,h2,h3,h4,h5{
+  font-family:'Fraunces', serif;
+  font-weight:600;
+  color:var(--espresso);
+}
+
+a{ color:var(--coffee); }
+a:hover{ color:var(--walnut); }
+
+/* ---------------- LAYOUT UTILITIES ---------------- */
+.container{
+  max-width:1080px;
+  margin:0 auto;
+  padding:0 28px;
+  width:100%;
+}
+main{ flex:1; }
+.mt-4{ margin-top:2rem; }
+.mb-3{ margin-bottom:1rem; }
+.d-flex{ display:flex; }
+.d-inline{ display:inline-block; }
+.justify-content-between{ justify-content:space-between; }
+.align-items-center{ align-items:center; }
+.me-2{ margin-right:.5rem; }
+.ms-2{ margin-left:.5rem; }
+
+/* ---------------- NAVBAR (matches landing nav) ---------------- */
+.navbar{
+  background:var(--espresso);
+  border-bottom:1px solid var(--line-dark);
+  padding:16px 28px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:12px;
+}
+.navbar-brand{
+  font-family:'Fraunces', serif;
+  font-weight:700;
+  font-size:1.15rem;
+  color:var(--parchment);
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration: none;
+}
+.navbar-brand .logo-mark{
+  width:24px; height:24px;
+  border:1.5px solid var(--camel);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:0.62rem;
+  color:var(--camel);
+  transform:rotate(-3deg);
+}
+.navbar-links{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.navbar-links a{
+  color:var(--parchment-dim);
+  font-size:0.86rem;
+  padding:8px 4px;
+  text-decoration: none;
+}
+.navbar-links a:hover{ color:var(--camel); }
+
+/* ---------------- FOOTER (compact version of landing footer) ---------------- */
+.app-footer{
+  background:var(--espresso);
+  color:var(--tan);
+  padding:26px 28px;
+  margin-top:60px;
+  border-top:1px solid var(--line-dark);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:10px;
+  font-size:0.8rem;
+}
+.app-footer .logo-mark{
+  width:20px; height:20px;
+  border:1.5px solid var(--camel);
+  display:inline-flex; align-items:center; justify-content:center;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:0.6rem;
+  color:var(--camel);
+  margin-right:8px;
+}
+.app-footer strong{
+  font-family:'Fraunces', serif;
+  color:var(--parchment-dim);
+  font-weight:600;
+}
+
+/* ---------------- BUTTONS ---------------- */
+.btn{
+  display:inline-block;
+  font-family:'Inter', sans-serif;
+  font-weight:600;
+  font-size:0.86rem;
+  padding:10px 20px;
+  border-radius:2px;
+  border:1px solid transparent;
+  cursor:pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+  text-decoration:none;
+  line-height:1.2;
+}
+.btn:hover{ transform:translateY(-1px); }
+.btn-sm{ padding:6px 12px; font-size:0.78rem; }
+
+.btn-primary{ background:var(--camel); color:var(--espresso); }
+.btn-primary:hover{ box-shadow:0 8px 18px rgba(207,169,110,0.3); color:var(--espresso); }
+
+.btn-secondary{ background:transparent; color:var(--walnut); border-color:var(--walnut); }
+.btn-secondary:hover{ background:var(--walnut); color:var(--parchment); }
+
+.btn-success{ background:var(--sage); color:#fff; }
+.btn-success:hover{ opacity:0.9; color:#fff; }
+
+.btn-danger{ background:var(--rust); color:#fff; }
+.btn-danger:hover{ opacity:0.9; color:#fff; }
+
+.btn-warning{ background:var(--camel); color:var(--espresso); }
+.btn-warning:hover{ opacity:0.9; color:var(--espresso); }
+
+.btn-outline-light{ background:transparent; color:var(--parchment-dim); border-color:var(--line-dark); }
+.btn-outline-light:hover{ background:var(--camel); color:var(--espresso); border-color:var(--camel); }
+
+/* ---------------- FORMS ---------------- */
+label{
+  display:block;
+  font-size:0.82rem;
+  font-weight:600;
+  color:var(--coffee);
+  margin-bottom:6px;
+}
+.form-control{
+  width:100%;
+  padding:11px 14px;
+  border:1px solid rgba(74,51,35,0.3);
+  border-radius:2px;
+  background:#fff;
+  color:var(--ink);
+  font-family:'Inter', sans-serif;
+  font-size:0.92rem;
+  transition:border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.form-control:focus{
+  outline:none;
+  border-color:var(--camel);
+  box-shadow:0 0 0 3px rgba(207,169,110,0.25);
+}
+select.form-control{ appearance:auto; }
+
+/* ---------------- ALERTS ---------------- */
+.alert{
+  padding:13px 18px;
+  border-radius:2px;
+  font-size:0.9rem;
+  margin-bottom:18px;
+  border:1px solid transparent;
+}
+.alert-success{ background:var(--sage-dim); color:#3d4a29; border-color:rgba(107,122,79,0.3); }
+.alert-danger{ background:var(--rust-dim); color:#6b241a; border-color:rgba(140,58,43,0.3); }
+
+.text-danger{ color:var(--rust); font-size:0.82rem; margin-top:4px; }
+.text-muted{ color:var(--tan); }
+.text-dark{ color:var(--ink); }
+
+/* ---------------- TABLE (card-catalog influenced) ---------------- */
+.table{
+  width:100%;
+  border-collapse:collapse;
+  background:#fff;
+  font-size:0.9rem;
+}
+.table-bordered{ border:1px solid rgba(74,51,35,0.2); }
+.table-bordered th, .table-bordered td{
+  border:1px solid rgba(74,51,35,0.15);
+  padding:12px 14px;
+  text-align:left;
+}
+.table thead th{
+  background:var(--coffee);
+  color:var(--parchment);
+  font-family:'IBM Plex Mono', monospace;
+  font-size:0.7rem;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  font-weight:500;
+}
+.table tbody tr:hover{ background:var(--parchment-dim); }
+
+/* ---------------- BADGES ---------------- */
+.badge{
+  display:inline-block;
+  padding:4px 10px;
+  border-radius:20px;
+  font-size:0.72rem;
+  font-weight:600;
+  letter-spacing:0.02em;
+}
+.bg-success{ background:var(--sage-dim); color:#3d4a29; }
+.bg-danger{ background:var(--rust-dim); color:#6b241a; }
+.bg-warning{ background:#f3e2bd; color:#6b4f1d; }
+
+/* ---------------- AUTH CARD (login/register) ---------------- */
+.auth-wrap{
+  min-height:calc(100vh - 140px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:60px 24px;
+  background:
+    radial-gradient(ellipse 700px 400px at 20% -10%, rgba(207,169,110,0.12), transparent),
+    var(--parchment);
+}
+.auth-card{
+  background:#fff;
+  width:100%;
+  max-width:420px;
+  padding:44px 40px;
+  border:1px solid rgba(74,51,35,0.15);
+  box-shadow:0 20px 50px rgba(36,21,9,0.08);
+  position:relative;
+}
+.auth-card::before{
+  content:"";
+  position:absolute;
+  top:16px; left:50%;
+  transform:translateX(-50%);
+  width:12px; height:12px;
+  border-radius:50%;
+  background:var(--parchment);
+  border:1.5px solid var(--tan);
+}
+.auth-card .eyebrow{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:0.68rem;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--tan);
+  text-align:center;
+  margin-bottom:8px;
+  margin-top:6px;
+}
+.auth-card h3{
+  text-align:center;
+  font-size:1.6rem;
+  margin-bottom:28px;
+}
+.auth-card .field{ margin-bottom:18px; }
+.auth-card .btn{ width:100%; text-align:center; margin-top:6px; }
+.auth-card .switch-link{
+  text-align:center;
+  margin-top:22px;
+  font-size:0.85rem;
+  color:var(--walnut);
+}
+.auth-card .switch-link a{ color:var(--coffee); font-weight:600; }
+
+/* ---------------- BOOKS LAYOUT + SIDEBAR ---------------- */
+.books-layout{
+  display:grid;
+  grid-template-columns:220px 1fr;
+  gap:32px;
+  align-items:start;
+}
+.books-sidebar{
+  background:#fff;
+  border:1px solid rgba(74,51,35,0.18);
+  position:sticky;
+  top:20px;
+}
+.sidebar-block{ padding:18px 18px 20px; }
+.sidebar-block + .sidebar-block{ border-top:1px dashed rgba(74,51,35,0.22); }
+.sidebar-title{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:0.66rem;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--tan);
+  margin-bottom:12px;
+}
+.sidebar-link{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
+  padding:8px 0;
+  font-size:0.87rem;
+  color:var(--coffee);
+  border-bottom:1px solid rgba(74,51,35,0.08);
+}
+.sidebar-link:last-child{ border-bottom:none; }
+.sidebar-link:hover{ color:var(--walnut); }
+.sidebar-link.active{
+  color:var(--espresso);
+  font-weight:600;
+}
+.sidebar-link.active .sidebar-count{
+  background:var(--camel);
+  color:var(--espresso);
+}
+.sidebar-count{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:0.7rem;
+  color:var(--tan);
+  background:var(--parchment-dim);
+  padding:1px 8px;
+  border-radius:20px;
+  min-width:22px;
+  text-align:center;
+}
+
+@media (max-width: 900px){
+  .books-layout{ grid-template-columns:1fr; }
+  .books-sidebar{ position:static; }
+}
+
+/* ---------------- PAGINATION ---------------- */
+.stacks-pagination{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  margin:36px 0 10px;
+  flex-wrap:wrap;
+}
+.page-btn{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:0.76rem;
+  letter-spacing:0.02em;
+  padding:8px 14px;
+  border:1px solid rgba(74,51,35,0.25);
+  color:var(--coffee);
+  background:#fff;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.page-btn:hover{ background:var(--coffee); color:var(--parchment); }
+.page-btn.disabled{ color:var(--tan); opacity:0.5; pointer-events:none; }
+
+.page-numbers{ display:flex; gap:4px; }
+.page-num{
+  min-width:34px;
+  text-align:center;
+  padding:8px 6px;
+  border:1px solid transparent;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:0.76rem;
+  color:var(--walnut);
+}
+.page-num:hover{ border-color:rgba(74,51,35,0.25); }
+.page-num.active{
+  background:var(--camel);
+  color:var(--espresso);
+  font-weight:600;
+  border-color:var(--camel);
+}
+.page-dots{
+  padding:8px 4px;
+  color:var(--tan);
+  font-family:'IBM Plex Mono', monospace;
+  font-size:0.76rem;
+}
+
+/* ---------------- BOOK CARD GRID ---------------- */
+.book-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(210px, 1fr));
+  gap:24px;
+  margin-top:8px;
+}
+.book-card{
+  background:#fff;
+  border:1px solid rgba(74,51,35,0.18);
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.book-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 16px 30px rgba(36,21,9,0.12);
+}
+.book-card::before{
+  content:"";
+  position:absolute;
+  top:12px; left:50%;
+  transform:translateX(-50%);
+  width:11px; height:11px;
+  border-radius:50%;
+  background:var(--parchment);
+  border:1.5px solid var(--tan);
+  z-index:2;
+}
+.book-cover{
+  aspect-ratio:3/4;
+  background-color:var(--coffee);
+  background-image:none; /* ADD IMAGE HERE per-book if you add cover art */
+  background-size:cover;
+  background-position:center;
+  border-bottom:1px dashed rgba(74,51,35,0.25);
+}
+.book-card-body{
+  padding:16px 16px 18px;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  flex:1;
+}
+.book-callnum{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:0.65rem;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--tan);
+}
+.book-card h4{
+  font-family:'Fraunces', serif;
+  font-size:1.02rem;
+  font-weight:600;
+  color:var(--espresso);
+  line-height:1.3;
+  margin:0;
+}
+.book-author{
+  font-size:0.82rem;
+  color:var(--walnut);
+}
+.book-meta-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-top:6px;
+}
+.book-copies{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:0.7rem;
+  color:var(--tan);
+}
+.book-actions{
+  display:flex;
+  gap:6px;
+  margin-top:12px;
+  flex-wrap:wrap;
+}
+.book-actions form{ display:inline-flex; }
+.book-actions .btn{ flex:1; text-align:center; }
+
+/* ---------------- STAT CARDS (admin dashboard) ---------------- */
+.stat-grid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:18px;
+  margin:28px 0 40px;
+}
+.stat-card{
+  background:#fff;
+  border:1px solid rgba(74,51,35,0.18);
+  padding:22px 22px 20px;
+  position:relative;
+}
+.stat-card::before{
+  content:"";
+  position:absolute;
+  top:12px; left:50%;
+  transform:translateX(-50%);
+  width:10px; height:10px;
+  border-radius:50%;
+  background:var(--parchment);
+  border:1.5px solid var(--tan);
+}
+.stat-card .stat-label{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:0.66rem;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--tan);
+  margin-top:12px;
+  margin-bottom:10px;
+}
+.stat-card .stat-num{
+  font-family:'Fraunces', serif;
+  font-weight:600;
+  font-size:2.1rem;
+  color:var(--espresso);
+  line-height:1;
+}
+.stat-card.alert-stat .stat-num{ color:var(--rust); }
+
+.recent-list{
+  background:#fff;
+  border:1px solid rgba(74,51,35,0.18);
+}
+.recent-list .recent-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 20px;
+  border-bottom:1px solid rgba(74,51,35,0.1);
+  font-size:0.88rem;
+}
+.recent-list .recent-row:last-child{ border-bottom:none; }
+.recent-list .recent-title{ font-weight:600; color:var(--espresso); }
+.recent-list .recent-meta{ color:var(--tan); font-size:0.78rem; }
+
+@media (max-width: 900px){
+  .stat-grid{ grid-template-columns:1fr 1fr; }
+}
+@media (max-width: 560px){
+  .stat-grid{ grid-template-columns:1fr; }
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 640px){
+  .navbar{ flex-direction:column; align-items:flex-start; }
+  .navbar-links{ width:100%; }
+  .table{ font-size:0.82rem; }
+  .table-bordered th, .table-bordered td{ padding:9px 10px; }
+  .auth-card{ padding:34px 26px; }
+}
+
+/* ---------------- MEMBER DASHBOARD ---------------- */
+.member-grid{
+  display:grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap:40px;
+  margin-top:20px;
+}
+
+.slot-indicator{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:0.72rem;
+  color:var(--tan);
+}
+.slot-dot{
+  width:9px; height:9px;
+  border-radius:50%;
+  border:1.5px solid var(--tan);
+  background:transparent;
+  margin-right:2px;
+}
+.slot-dot.filled{ background:var(--camel); border-color:var(--camel); }
+
+.empty-shelf{
+  background:#fff;
+  border:1px dashed rgba(74,51,35,0.3);
+  padding:44px 20px;
+  text-align:center;
+}
+.empty-shelf-icon{ font-size:2rem; margin-bottom:10px; }
+.empty-shelf p{ color:var(--walnut); margin-bottom:16px; font-size:0.9rem; }
+
+.member-book-list{ display:flex; flex-direction:column; gap:12px; }
+.member-book-row{
+  background:#fff;
+  border:1px solid rgba(74,51,35,0.18);
+  padding:14px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.member-book-row.is-overdue{ border-color:rgba(140,58,43,0.4); background:var(--rust-dim); }
+.member-book-cover{
+  width:46px; height:60px;
+  flex-shrink:0;
+  background-color:var(--coffee);
+  background-size:cover;
+  background-position:center;
+}
+.member-book-title{
+  font-family:'Fraunces', serif;
+  font-weight:600;
+  font-size:0.95rem;
+  color:var(--espresso);
+}
+.member-book-due{
+  font-size:0.78rem;
+  color:var(--tan);
+  margin-top:3px;
+}
+
+.discover-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+.discover-card{ background:#fff; border:1px solid rgba(74,51,35,0.18); }
+.discover-cover{
+  aspect-ratio:3/4;
+  background-color:var(--coffee);
+  background-size:cover;
+  background-position:center;
+  border-bottom:1px dashed rgba(74,51,35,0.25);
+}
+.discover-title{
+  font-family:'Fraunces', serif;
+  font-weight:600;
+  font-size:0.82rem;
+  color:var(--espresso);
+  padding:10px 10px 2px;
+  line-height:1.3;
+}
+.discover-author{
+  font-size:0.74rem;
+  color:var(--tan);
+  padding:0 10px 12px;
+}
+
+@media (max-width: 900px){
+  .member-grid{ grid-template-columns:1fr; }
+}
+@media (max-width: 480px){
+  .discover-grid{ grid-template-columns:1fr 1fr; }
+  .member-book-row{ flex-wrap:wrap; }
+}
