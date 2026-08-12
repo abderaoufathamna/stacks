@@ -19,6 +19,7 @@ This README explains what the project does, how it's put together, and how to ru
 - [Project structure](#project-structure)
 - [Ideas for extending this project](#ideas-for-extending-this-project)
 - [License](#license)
+- [License](#license)
 
 ---
 
@@ -242,3 +243,7 @@ Things that would build naturally on top of what's here:
 ## License
 
 Released under the [MIT License](LICENSE) — free to use, fork, or build on for learning or your own projects.
+
+---
+
+## Screenshots
