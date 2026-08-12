@@ -42,7 +42,10 @@ h1,h2,h3,h4,h5{
   color:var(--espresso);
 }
 
-a{ color:var(--coffee); }
+a{ 
+  color:var(--coffee);
+  text-decoration: none;
+}
 a:hover{ color:var(--walnut); }
 
 /* ---------------- LAYOUT UTILITIES ---------------- */
@@ -81,7 +84,6 @@ main{ flex:1; }
   display:flex;
   align-items:center;
   gap:10px;
-  text-decoration: none;
 }
 .navbar-brand .logo-mark{
   width:24px; height:24px;
@@ -102,7 +104,6 @@ main{ flex:1; }
   color:var(--parchment-dim);
   font-size:0.86rem;
   padding:8px 4px;
-  text-decoration: none;
 }
 .navbar-links a:hover{ color:var(--camel); }
 

@@ -28,7 +28,7 @@ class AuthController extends Controller
             'password' => Hash::make($validated['password']),
         ]);
 
-        return redirect()->route('login')->with('success', 'تم إنشاء الحساب، سجل دخولك الآن');
+        return redirect()->route('login')->with('success', 'Account created, login');
     }
 
     public function showLogin()
@@ -48,7 +48,7 @@ class AuthController extends Controller
             return redirect()->route('dashboard');
         }
 
-        return back()->withErrors(['email' => 'بيانات الدخول غير صحيحة']);
+        return back()->withErrors(['email' => 'Inccourect informations']);
     }
 
     public function logout(Request $request)

@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
-    // Keep this in sync with whatever limit you enforce in BorrowingController
     const MAX_ACTIVE_BORROWS = 2;
 
     public function index()
