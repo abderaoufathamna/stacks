@@ -247,3 +247,47 @@ Released under the [MIT License](LICENSE) — free to use, fork, or build on for
 ---
 
 ## Screenshots
+
+### Landing Page
+
+![Stacks Landing Page](screenshots/127.0.0.1_8000_.png)
+
+### Login Page
+
+![Stacks Landing Page](screenshots/127.0.0.1_8000_login.png)
+
+### Register Page
+
+![Stacks Landing Page](screenshots/127.0.0.1_8000_register.png)
+
+### Member Dashboard Page
+
+![Stacks Landing Page](screenshots/127.0.0.1_8000_dashboard_member.png)
+
+### Admin Dashboard Page
+
+![Stacks Landing Page](screenshots/127.0.0.1_8000_dashboard.png)
+
+### Profile Page
+
+![Stacks Landing Page](screenshots/127.0.0.1_8000_profile.png)
+
+### Books Page
+
+![Stacks Landing Page](screenshots/127.0.0.1_8000_books.png)
+
+### Searching For a Book Page
+
+![Stacks Landing Page](screenshots/127.0.0.1_8000_search_books.png)
+
+### My Borrowing Page
+
+![Stacks Landing Page](screenshots/127.0.0.1_8000_my-borrowings.png)
+
+### Authors Page
+
+![Stacks Landing Page](screenshots/127.0.0.1_8000_authors.png)
+
+### Categories Page
+
+![Stacks Landing Page](screenshots/127.0.0.1_8000_categories.png)
