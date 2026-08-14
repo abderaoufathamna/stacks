@@ -162,7 +162,7 @@ php artisan key:generate
 Set your database credentials in `.env`:
 
 ```
-DB_DATABASE=stacks
+DB_DATABASE=library_db
 DB_USERNAME=root
 DB_PASSWORD=
 ```
