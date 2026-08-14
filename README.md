@@ -19,7 +19,7 @@ This README explains what the project does, how it's put together, and how to ru
 - [Project structure](#project-structure)
 - [Ideas for extending this project](#ideas-for-extending-this-project)
 - [License](#license)
-- [License](#license)
+- [Screenshots](#screenshots)
 
 ---
 

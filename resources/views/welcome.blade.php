@@ -50,7 +50,7 @@
             <div class="stat-label">SPREADSHEETS NEEDED</div>
           </div>
           <div>
-            <div class="stat-num">2 roles</div>
+            <div class="stat-num">1 clients</div>
             <div class="stat-label">ADMIN &amp; MEMBER ACCESS</div>
           </div>
         </div>
